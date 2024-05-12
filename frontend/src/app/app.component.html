@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Cache Management</h1>
+  <label for="key">Key:</label>
+  <input type="text" id="key" [(ngModel)]="key">
+
+  <label for="value">Value:</label>
+  <input type="text" id="value" [(ngModel)]="value">
+
+  <label for="expiration">Expiration (seconds):</label>
+  <input type="number" id="expiration" [(ngModel)]="expiration">
+
+  <button (click)="setValue()">Set Value</button>
+  <button (click)="getValue()">Get Value</button>
+  <button (click)="deleteValue()">Delete Key</button>
+  <button (click)="clearValue()">Clear</button>
+
+  <div *ngIf="result">
+    <p>Result:</p>
+    <pre>{{ result | json }}</pre>
+  </div>
+<!-- 
+  <div>
+    <h2>Cache State:</h2>
+    <pre>{{ cacheState | json }}</pre>
+  </div> -->
+</div>
